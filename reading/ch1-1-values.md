@@ -17,7 +17,7 @@
 >Every value has a type that determines its role. There are six basic types of values in JavaScript: numbers, strings, Booleans, objects, functions, and undefined values -Eloquent JavaScript
 
 ##Numbers
-Below is an example of a value with the type 'number'.
+The most simple type is Number.  Below is an example of a value with the type 'number'.
 
 ```
 42
@@ -35,8 +35,85 @@ This is an example of scientific notation for 42 billion.
 4.2e10
 ```
 
+##Arithmetic
+Numbers are mainly used for arithmetic.  
 
+```
+100 + 20
+```
 
+JavaScript follows order of operations.
+
+```
+100 + 20 * 3 is NOT equal to (100+20)*3
+```
+
+##Strings
+
+Strings represent text.  Strings must be enclosed with quotes.  Single or double.
+
+```
+"Eloquent JavaScript"
+'JavaScript Basic Training'
+```
+
+##console.log
+Outputs a message to the developer console. - MDN
+
+```
+console.log("hello class!")
+//"hello class!"
+
+console.log(5);
+//5
+```
+
+Note: Above the two backslashes before 'hello class!' represent the console's output.
+
+In JavaScript, double-slashes denote code comments.  Any code and/or text beyond the '//' will NOT be read by the JavaScript interpreter.
+
+##Unary Operators
+
+A unary operator is an operation with only one operand.  A simple example is 'typeof'.
+
+>The typeof operator returns a string indicating the type of the unevaluated operand. - MDN
+
+```
+console.log(typeof 4);
+//'number'
+
+console.log(typeof 'x');
+//'string'
+```
+
+##Booleans
+
+The Boolean type has only two values --> true and false.  Observe this simple example.
+
+```
+console.log(3 > 2)
+//true
+console.log(3 < 2)
+//false
+```
+
+Be careful with comparisons.  In JavaScript, strings can be compared like numbers.
+
+```
+console.log("Aardvark" < "Zoroaster")
+//true
+```
+
+>The way strings are ordered is more or less alphabetic: uppercase letters are always “less” than lowercase ones, so "Z" < "a" is true, and non-alphabetic characters (!, -, and so on) are also included in the ordering. The actual comparison is based on the Unicode standard. -Eloquent JavaScript
+
+Only one value JavaScript is not equal to itself.
+
+NaN - The global NaN property is a value representing Not-A-Number. - MDN
+
+```
+console.log(NaN == NaN)
+//false
+```
 
 
 
