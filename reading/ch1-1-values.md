@@ -72,6 +72,30 @@ Note: Above the two backslashes before 'hello class!' represent the console's ou
 
 In JavaScript, double-slashes denote code comments.  Any code and/or text beyond the '//' will NOT be read by the JavaScript interpreter.
 
+##Booleans
+
+The Boolean type has only two values --> true and false.  Observe this simple example.
+
+```
+console.log(3 > 2)
+//true
+console.log(3 < 2)
+//false
+```
+
+##Undefined Values
+>There are two special values, written null and undefined, that are used to denote the absence of a meaningful value. They are themselves values, but they carry no information.
+Many operations in the language that don’t produce a meaningful value (you’ll see some later) yield undefined simply because they have to yield some value.
+The difference in meaning between undefined and null is an accident of JavaScript’s design, and it doesn’t matter most of the time. In the cases where you actually have to concern yourself with these values, I recommend treating them as interchangeable (more on that in a moment). - Eloquent JavaScript
+
+```
+console.log(null)
+console.log(undefined)
+```
+
+#Operators
+JavaScript operators are used to assign values, compare values, perform arithmetic operations, and more. -W3Schools
+
 ##Unary Operators
 
 A unary operator is an operation with only one operand.  A simple example is 'typeof'.
@@ -86,16 +110,7 @@ console.log(typeof 'x');
 //'string'
 ```
 
-##Booleans
-
-The Boolean type has only two values --> true and false.  Observe this simple example.
-
-```
-console.log(3 > 2)
-//true
-console.log(3 < 2)
-//false
-```
+##Comparison
 
 Be careful with comparisons.  In JavaScript, strings can be compared like numbers.
 
@@ -115,8 +130,98 @@ console.log(NaN == NaN)
 //false
 ```
 
+Other common operators are >= (greater than or equal to), <= (less than or equal to), == (equal to), and != (not equal to).
 
+```
+console.log(3>3)
+//false
+console.log(3>=3)
+//true
+console.log(4<4)
+//false
+console.log(4<=4)
+//true
+console.log(5==5)
+//true
+console.log(5!=5)
+//false
+```
 
+##Logical Operators
+
+JavaScript supports three logical operators.
+
+###And
+>The && operator represents logical and. It is a binary operator, and its result is true only if both the values given to it are true. -Eloquent JavaScript
+
+```
+console.log(true && true)
+//true
+console.log(true && false)
+//false
+```
+
+###Or
+>The || operator denotes logical or. It produces true if either of the values given to it is true. -Eloquent JavaScript
+
+```
+console.log(true || true)
+//true
+console.log(true || false)
+//true
+```
+
+###Not
+>Not is written as an exclamation mark (!). It is a unary operator that flips the value given to it—!true produces false and !false gives true. -Eloquent JavaScript
+
+```
+console.log(!true)
+//false
+console.log(!false)
+//true
+```
+
+##Automatic Type Conversion
+
+JavaScript will go out of its way to evaluate a given expression.  This can result in odd behavior.
+
+```
+console.log(8 * null)
+// → 0
+console.log("5" - 1)
+// → 4
+console.log("5" + 1)
+// → 51
+console.log("five" * 2)
+// → NaN
+console.log(false == 0)
+// → true
+```
+
+>When an operator is applied to the “wrong” type of value, JavaScript will quietly convert that value to the type it wants, using a set of rules that often aren’t what you want or expect. This is called type coercion. -Eloquent JavaScript
+
+Beware type coercion!
+
+>When comparing values of the same type using ==, the outcome is easy to predict: you should get true when both values are the same, except in the case of NaN. But when the types differ, JavaScript uses a complicated and confusing set of rules to determine what to do -Eloquent JavaScript
+
+Best, as a general rule, avoid this problem by using ===.  
+
+```
+console.log('3' == 3)
+//true
+console.log(3 == 3)
+//true
+console.log('3' === 3)
+//false
+console.log(3 === 3)
+//true
+```
+
+#Summary
+
+>We looked at four types of JavaScript values in this chapter: numbers, strings, Booleans, and undefined values.
+<!-- Such values are created by typing in their name (true, null) or value (13, "abc"). You can combine and transform values with operators. We saw binary operators for arithmetic (+, -, *, /, and %), string concatenation (+), comparison (==, !=, ===, !==, <, >, <=, >=), and logic (&&, ||), as well as several unary operators (- to negate a number, ! to negate logically, and typeof to find a value’s type). -->
+This gives you enough information to use JavaScript as a pocket calculator, but not much more. The next chapter will start tying these expressions together into basic programs. -Eloquent JavaScript
 
 
 To create a value, first enter the keyword "let".
