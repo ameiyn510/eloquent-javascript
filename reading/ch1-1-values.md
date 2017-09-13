@@ -62,10 +62,9 @@ Outputs a message to the developer console. - MDN
 
 ```javascript
 console.log("hello class!")
-//"hello class!"
-
+// → "hello class!"
 console.log(5);
-//5
+// → 5
 ```
 
 Note: Above the two backslashes before 'hello class!' represent the console's output.
@@ -78,9 +77,9 @@ The Boolean type has only two values --> true and false.  Observe this simple ex
 
 ```javascript
 console.log(3 > 2)
-//true
+// → true
 console.log(3 < 2)
-//false
+// → false
 ```
 
 ##Undefined Values
@@ -90,7 +89,9 @@ The difference in meaning between undefined and null is an accident of JavaScrip
 
 ```javascript
 console.log(null)
+// → null
 console.log(undefined)
+// → undefined
 ```
 
 #Operators
@@ -104,10 +105,9 @@ A unary operator is an operation with only one operand.  A simple example is 'ty
 
 ```javascript
 console.log(typeof 4);
-//'number'
-
+// → 'number'
 console.log(typeof 'x');
-//'string'
+// → 'string'
 ```
 
 ##Comparison
@@ -116,7 +116,7 @@ Be careful with comparisons.  In JavaScript, strings can be compared like number
 
 ```javascript
 console.log("Aardvark" < "Zoroaster")
-//true
+// → true
 ```
 
 >The way strings are ordered is more or less alphabetic: uppercase letters are always “less” than lowercase ones, so "Z" < "a" is true, and non-alphabetic characters (!, -, and so on) are also included in the ordering. The actual comparison is based on the Unicode standard. -Eloquent JavaScript
@@ -127,24 +127,24 @@ NaN - The global NaN property is a value representing Not-A-Number. - MDN
 
 ```javascript
 console.log(NaN == NaN)
-//false
+// → false
 ```
 
 Other common operators are >= (greater than or equal to), <= (less than or equal to), == (equal to), and != (not equal to).
 
 ```javascript
 console.log(3>3)
-//false
+// → false
 console.log(3>=3)
-//true
+// → true
 console.log(4<4)
-//false
+// → false
 console.log(4<=4)
-//true
+// → true
 console.log(5==5)
-//true
+// → true
 console.log(5!=5)
-//false
+// → false
 ```
 
 ##Logical Operators
@@ -156,9 +156,9 @@ JavaScript supports three logical operators.
 
 ```javascript
 console.log(true && true)
-//true
+// → true
 console.log(true && false)
-//false
+// → false
 ```
 
 ###Or
@@ -166,9 +166,9 @@ console.log(true && false)
 
 ```javascript
 console.log(true || true)
-//true
+// → true
 console.log(true || false)
-//true
+// → true
 ```
 
 ###Not
@@ -176,9 +176,9 @@ console.log(true || false)
 
 ```javascript
 console.log(!true)
-//false
+// → false
 console.log(!false)
-//true
+// → true
 ```
 
 ##Automatic Type Conversion
@@ -208,13 +208,13 @@ Best, as a general rule, avoid this problem by using ===.
 
 ```javascript
 console.log('3' == 3)
-//true
+// → true
 console.log(3 == 3)
-//true
+// → true
 console.log('3' === 3)
-//false
+// → false
 console.log(3 === 3)
-//true
+// → true
 ```
 
 #Summary
