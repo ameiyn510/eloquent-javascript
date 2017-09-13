@@ -14,7 +14,8 @@ A fragment of code that produces a value is called an expression. Every value th
 If an expression is a sentence fragment, a statement corresponds to a full sentence in human language.  A program is simply a list of statements.
 
 The simplest statements are expressions followed by a semi-colon.
-```
+
+```javascript
 42;
 !false;
 ```
@@ -23,7 +24,50 @@ Remember:  A JavaScript statement is a line of executable code.  Only amounts to
 
 ##Variables
 
-##What is a Value?
+>How does a program keep an internal state? How does it remember things? We have seen how to produce new values from old values, but this does not change the old values, and the new value has to be immediately used or it will dissipate again. To catch and hold values, JavaScript provides a thing called a variable. -Eloquent JavaScript
+
+```javascript
+let randomNumber = 5;
+```
+
+The reserved keyword 'let' indicates this statement will define a variable.
+
+>After a variable has been defined, its name can be used as an expression. The value of such an expression is the value the variable currently holds. Here’s an example: -Eloquent JavaScript
+
+```javascript
+let five = 5
+console.log(5*5)
+//25
+console.log(five*5)
+//25
+console.log(five*five)
+//25
+```
+
+A variable's name and value are not tied together forever.  Use the = operator to connect existing variables to new values.
+
+```javascript
+let mood = "happy";
+console.log(mood);
+//"happy"
+
+mood = "hangry";
+console.log(mood)
+//"hangry"
+
+```
+
+Here's another simple example:
+
+```javascript
+let debtToMom = 1000
+debtToMom = debtToMom - 120;
+console.log(debtToMom);
+//880
+```
+
+##Keywords and Reserved Words
+
 
 #Types
 ##Numbers

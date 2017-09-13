@@ -19,32 +19,32 @@
 ##Numbers
 The most simple type is Number.  Below is an example of a value with the type 'number'.
 
-```
+```javascript
 42
 ```
 
 Here's a fraction
 
-```
+```javascript
 42.42
 ```
 
 This is an example of scientific notation for 42 billion.
 
-```
+```javascript
 4.2e10
 ```
 
 ##Arithmetic
 Numbers are mainly used for arithmetic.  
 
-```
+```javascript
 100 + 20
 ```
 
 JavaScript follows order of operations.
 
-```
+```javascript
 100 + 20 * 3 is NOT equal to (100+20)*3
 ```
 
@@ -52,7 +52,7 @@ JavaScript follows order of operations.
 
 Strings represent text.  Strings must be enclosed with quotes.  Single or double.
 
-```
+```javascript
 "Eloquent JavaScript"
 'JavaScript Basic Training'
 ```
@@ -60,7 +60,7 @@ Strings represent text.  Strings must be enclosed with quotes.  Single or double
 ##console.log
 Outputs a message to the developer console. - MDN
 
-```
+```javascript
 console.log("hello class!")
 //"hello class!"
 
@@ -76,7 +76,7 @@ In JavaScript, double-slashes denote code comments.  Any code and/or text beyond
 
 The Boolean type has only two values --> true and false.  Observe this simple example.
 
-```
+```javascript
 console.log(3 > 2)
 //true
 console.log(3 < 2)
@@ -88,7 +88,7 @@ console.log(3 < 2)
 Many operations in the language that don’t produce a meaningful value (you’ll see some later) yield undefined simply because they have to yield some value.
 The difference in meaning between undefined and null is an accident of JavaScript’s design, and it doesn’t matter most of the time. In the cases where you actually have to concern yourself with these values, I recommend treating them as interchangeable (more on that in a moment). - Eloquent JavaScript
 
-```
+```javascript
 console.log(null)
 console.log(undefined)
 ```
@@ -102,7 +102,7 @@ A unary operator is an operation with only one operand.  A simple example is 'ty
 
 >The typeof operator returns a string indicating the type of the unevaluated operand. - MDN
 
-```
+```javascript
 console.log(typeof 4);
 //'number'
 
@@ -114,7 +114,7 @@ console.log(typeof 'x');
 
 Be careful with comparisons.  In JavaScript, strings can be compared like numbers.
 
-```
+```javascript
 console.log("Aardvark" < "Zoroaster")
 //true
 ```
@@ -125,14 +125,14 @@ Only one value JavaScript is not equal to itself.
 
 NaN - The global NaN property is a value representing Not-A-Number. - MDN
 
-```
+```javascript
 console.log(NaN == NaN)
 //false
 ```
 
 Other common operators are >= (greater than or equal to), <= (less than or equal to), == (equal to), and != (not equal to).
 
-```
+```javascript
 console.log(3>3)
 //false
 console.log(3>=3)
@@ -154,7 +154,7 @@ JavaScript supports three logical operators.
 ###And
 >The && operator represents logical and. It is a binary operator, and its result is true only if both the values given to it are true. -Eloquent JavaScript
 
-```
+```javascript
 console.log(true && true)
 //true
 console.log(true && false)
@@ -164,7 +164,7 @@ console.log(true && false)
 ###Or
 >The || operator denotes logical or. It produces true if either of the values given to it is true. -Eloquent JavaScript
 
-```
+```javascript
 console.log(true || true)
 //true
 console.log(true || false)
@@ -174,7 +174,7 @@ console.log(true || false)
 ###Not
 >Not is written as an exclamation mark (!). It is a unary operator that flips the value given to it—!true produces false and !false gives true. -Eloquent JavaScript
 
-```
+```javascript
 console.log(!true)
 //false
 console.log(!false)
@@ -185,7 +185,7 @@ console.log(!false)
 
 JavaScript will go out of its way to evaluate a given expression.  This can result in odd behavior.
 
-```
+```javascript
 console.log(8 * null)
 // → 0
 console.log("5" - 1)
@@ -206,7 +206,7 @@ Beware type coercion!
 
 Best, as a general rule, avoid this problem by using ===.  
 
-```
+```javascript
 console.log('3' == 3)
 //true
 console.log(3 == 3)
