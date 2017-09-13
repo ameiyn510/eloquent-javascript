@@ -223,6 +223,9 @@ console.log(3 === 3)
 <!-- Such values are created by typing in their name (true, null) or value (13, "abc"). You can combine and transform values with operators. We saw binary operators for arithmetic (+, -, *, /, and %), string concatenation (+), comparison (==, !=, ===, !==, <, >, <=, >=), and logic (&&, ||), as well as several unary operators (- to negate a number, ! to negate logically, and typeof to find a value’s type). -->
 This gives you enough information to use JavaScript as a pocket calculator, but not much more. The next chapter will start tying these expressions together into basic programs. -Eloquent JavaScript
 
+=============EDITING LINE=============
+=============EDITING LINE=============
+=============EDITING LINE=============
 
 To create a value, first enter the keyword "let".
 Then enter the value's name.
@@ -232,11 +235,6 @@ Finally, enter
 ```javascript
 let name = "Dwayne The Rock Johnson";
 ```
-
-
-=============EDITING LINE=============
-=============EDITING LINE=============
-=============EDITING LINE=============
 
 In JavaScript, a variable stores a value of any type so that it can be used later in a program, potentially many different times. Variables can store values that are the result of sophisticated operations, also allowing programmers a way to indicate what a particular value ought to represent.
 
