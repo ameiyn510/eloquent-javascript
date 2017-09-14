@@ -9,9 +9,11 @@ This chapter we begin programming in earnest.  Passed nouns and sentence fragmen
 - Obj 3
 
 ##Expressions and Statements
->In Chapter 1, we made some values and then applied operators to them to get new values. Creating values like this is an essential part of every JavaScript program, but it is only a part.
-A fragment of code that produces a value is called an expression. Every value that is written literally (such as 22 or "psychoanalysis") is an expression.
-If an expression is a sentence fragment, a statement corresponds to a full sentence in human language.  A program is simply a list of statements.
+Creating values is essential for every JavaScript program.  But only part.
+
+A fragment of code producing a value is called an expression.  Every value written literally is an expression.  
+
+>If an expression is a sentence fragment, a statement corresponds to a full sentence in human language.  A program is simply a list of statements. -Eloquent JavaScript
 
 The simplest statements are expressions followed by a semi-colon.
 
@@ -23,8 +25,9 @@ The simplest statements are expressions followed by a semi-colon.
 Remember:  A JavaScript statement is a line of executable code.  Only amounts to something if it affects the world.
 
 ##Variables
+Earlier, we produced new values from old.  But these new values had to be used immediately -- or they'd dissipate.
 
->How does a program keep an internal state? How does it remember things? We have seen how to produce new values from old values, but this does not change the old values, and the new value has to be immediately used or it will dissipate again. To catch and hold values, JavaScript provides a thing called a variable. -Eloquent JavaScript
+How does a program remember things?  To hold values, JavaScript provides variables.
 
 ```javascript
 let randomNumber = 5;
@@ -32,7 +35,7 @@ let randomNumber = 5;
 
 The reserved keyword 'let' indicates this statement will define a variable.
 
->After a variable has been defined, its name can be used as an expression. The value of such an expression is the value the variable currently holds. Here’s an example: -Eloquent JavaScript
+Once defined, a variable name can be used as an expression.  That expression's value is identical to the value held by the variable.
 
 ```javascript
 let five = 5
@@ -44,7 +47,7 @@ console.log(five*five)
 // → 25
 ```
 
-A variable's name and value are not tied together forever.  Use the = operator to connect existing variables to new values.
+Remember: a variable's name and value are not tied together forever.  Use the = operator to connect existing variables to new values.
 
 ```javascript
 let mood = "happy";
@@ -54,7 +57,6 @@ console.log(mood);
 mood = "hangry";
 console.log(mood)
 // → "hangry"
-
 ```
 
 Here's another simple example:
@@ -67,7 +69,6 @@ console.log(debtToMom);
 ```
 
 ##Keywords and Reserved Words
-
 Words with special meanings in JavaScript may not be used as variable names.  The full list of words is long.
 
 ```
@@ -82,11 +83,12 @@ throw true try typeof var void while with yield
 Don't memorize the list above.  Just remember -- the above words may not be used in variable names.
 
 ##The Environment
-
 >The collection of variables and their values that exist at a given time is called the environment. When a program starts up, this environment is not empty. It always contains variables that are part of the language standard, and most of the time, it has variables that provide ways to interact with the surrounding system. For example, in a browser, there are variables and functions to inspect and influence the currently loaded website and to read mouse and keyboard input. -Eloquent JavaScript
 
 ##Functions
->A lot of the values provided in the default environment have the type function. A function is a piece of program wrapped in a value. Such values can be applied in order to run the wrapped program.  For example, in a browser environment, the variable alert holds a function that shows a little dialog box with a message. -Eloquent JavaScript
+A function is a piece of program wrapped in a value.  To run the wrapped program, apply the value.
+
+>For example, in a browser environment, the variable alert holds a function that shows a little dialog box with a message. -Eloquent JavaScript
 
 ```javascript
 alert('Good morning friends!');
@@ -97,7 +99,6 @@ Executing a function is called invoking, calling, or applying.
 The most common way to call a function is to write parentheses after its name.  In-between parentheses, put the function's input.  Also known as an argument.  Re-examine the alert function above.
 
 ##The console.log function
-
 >In past examples, we’ve used console.log to output values. Most JavaScript systems (including all modern web browsers and Node.js) provide a console.log function that writes out its arguments to some text output device. In browsers, the output lands in the JavaScript console. This part of the browser interface is hidden by default, but most browsers open it when you press F12 or, on Mac, when you press Command-Option-I. If that does not work, search through the menus for an item named “web console” or “developer tools”. -Eloquent JavaScript
 
 ```javascript
@@ -106,7 +107,7 @@ console.log("this is x:",x)
 // → this is x: 15
 ```
 
-Question.  If variable names cannot contain periods, why is console.log valid syntax?
+Check For Understanding.  If variable names cannot contain periods, why is console.log valid syntax?
 
 ##Side Effects
 >Showing a dialog box or writing text to the screen is a side effect. A lot of functions are useful because of their side effects.
@@ -125,7 +126,7 @@ console.log(Math.min(2, 4) + 100);
 // → 102
 ```
 
-Question.  Why was the above result 102?  Why not 106?  Or 94?
+Check For Understanding.  Why was the above result 102?  Why not 106?  Or 94?
 
 ##Control Flow
 >When your program contains more than one statement, the statements are executed, predictably, from top to bottom. As a basic example, this program has two statements. The first one asks the user for a number, and the second, which is executed afterward, shows the square of that number. -Eloquent JavaScript
@@ -134,8 +135,7 @@ Question.  Why was the above result 102?  Why not 106?  Or 94?
 let theNumber =  Number(prompt("Pick a number", ""));
 alert("Your number is the square root of " + theNumber * theNumber);
 ```
-
->The function Number converts a value to a number. We need that conversion because the result of prompt is a string value, and we want a number. There are similar functions called String and Boolean that convert values to those types. -Eloquent JavaScript
+Check For Understanding.  Above, why use the function Number?
 
 ##Conditional Execution
 Executing statements in straight-line order is not our only option.  With conditional execution, we choose between two different routes based on a Boolean value.
@@ -151,7 +151,7 @@ if (!isNaN(theNumber)) {
 }
 ```
 
-What happens if you enter "Dwayne The Rock Johnson"?  No output is shown.
+Check For Understanding.  What happens if you enter "Dwayne The Rock Johnson"?
 
 >The keyword if executes or skips a statement depending on the value of a Boolean expression. The deciding expression is written after the keyword, between parentheses, followed by the statement to execute.
 >The isNaN function is a standard JavaScript function that returns true only if the argument it is given is NaN. The Number function happens to return NaN when you give it a string that doesn’t represent a valid number. Thus, the condition translates to “unless theNumber is not-a-number, do this”. -Eloquent JavaScript
@@ -159,7 +159,6 @@ What happens if you enter "Dwayne The Rock Johnson"?  No output is shown.
 Check For Understanding.  What happened to the alert?
 
 ##If-else
-
 Often, a programmer wants both (a) code that executes when a condition holds true AND (b) different code that executes when a condition holds false.  The else keyword can be used with if to create two separate, alternate execution paths.
 
 ```javascript
@@ -174,7 +173,6 @@ if (!isNaN(theNumber)) {
 What if we need more than two separate, alternate execution paths??
 
 ##Chaining if / else if / else
-
 ```javascript
 let num = Number(prompt("Pick a number", "0"));
 
@@ -190,7 +188,6 @@ if (num < 10) {
 Check for Understanding.  How does the above code work?
 
 #While and Do Loops
-
 How to print all even numbers from 0 to 12?  Simplest might be:
 
 ```javascript
@@ -256,7 +253,6 @@ console.log(yourName);
 >This program will force you to enter a name. It will ask again and again until it gets something that is not an empty string. Applying the ! operator will convert a value to Boolean type before negating it, and all strings except "" convert to true. This means the loop continues going round until you provide a name that is not the empty string. -Eloquent JavaScript
 
 ##Indenting Code
-
 To maximize your code's readability, indent your code.  Use spaces or tabs to illustrate your code's internal structure.
 
 Below are two examples:
@@ -285,7 +281,6 @@ for ( let i = 1; i < stop; i++ ){
 The above example is indented well.  Without effort, we see a conditional nested in a for-loop.  Spaces help readability too.
 
 ##For Loops
-
 >Many loops follow the pattern seen in the previous while examples. First, a “counter” variable is created to track the progress of the loop. Then comes a while loop, whose test expression usually checks whether the counter has reached some boundary yet. At the end of the loop body, the counter is updated to track progress.
 Because this pattern is so common, JavaScript and similar languages provide a slightly shorter and more comprehensive form, the for loop. -Eloquent JavaScript
 
@@ -302,7 +297,6 @@ for ( let number = 0; number <= 10; number=number+2 ) {
 The parentheses after a for keyword must contain two semicolons. The part before the first semicolon initializes the loop, usually by defining a variable. The second part is the expression that checks whether the loop must continue. The final part updates the state of the loop after every iteration. In most cases, this is shorter and clearer than a while construct. -Eloquent JavaScript
 
 ##Breaking Out A Loop
-
 >Having the loop’s condition produce false is not the only way a loop can finish. There is a special statement called break that has the effect of immediately jumping out of the enclosing loop.
 This program illustrates the break statement. It finds the first number that is both greater than or equal to 20 and divisible by 7. -Eloquent JavaScript
 
@@ -322,12 +316,9 @@ If you were to leave out that break statement or accidentally write a condition 
 If you create an infinite loop in one of the examples on these pages, you’ll usually be asked whether you want to stop the script after a few seconds. If that fails, you will have to close the tab that you’re working in, or on some browsers close your whole browser, in order to recover. -Eloquent JavaScript
 
 ##Updating Variables Succinctly
-
 >Especially when looping, a program often needs to “update” a variable to hold a value based on that variable’s previous value. -Eloquent JavaScript
 
 ##Dispatching On A Value With Switch
-
-
 ```javascript
 if (variable == "value1"){
   action1();
@@ -361,7 +352,6 @@ switch (prompt("What is the weather like?")) {
 >You may put any number of case labels inside the block opened by switch. The program will jump to the label that corresponds to the value that switch was given or to default if no matching value is found. It starts executing statements there, even if they’re under another label, until it reaches a break statement. In some cases, such as the "sunny" case in the example, this can be used to share some code between cases (it recommends going outside for both sunny and cloudy weather). But beware: it is easy to forget such a break, which will cause the program to execute code you do not want executed. -Eloquent JavaScript
 
 ##Capitalization
-
 >Variable names may not contain spaces, yet it is often helpful to use multiple words to clearly describe what the variable represents. These are pretty much your choices for writing a variable name with several words in it:
 
 ```javascript
@@ -374,7 +364,6 @@ namingConventionsVary
 >The first style can be hard to read. Personally, I like the look of the underscores, though that style is a little painful to type. The standard JavaScript functions, and most JavaScript programmers, follow the bottom style—they capitalize every word except the first. It is not hard to get used to little things like that, and code with mixed naming styles can be jarring to read, so we will just follow this convention. -Eloquent JavaScript
 
 ##Comments
-
 >Often, raw code does not convey all the information you want a program to convey to human readers, or it conveys it in such a cryptic way that people might not understand it. At other times, you might just feel poetic or want to include some thoughts as part of your program. This is what comments are for.
 A comment is a piece of text that is part of a program but is completely ignored by the computer. JavaScript has two ways of writing comments. To write a single-line comment, you can use two slash characters (//) and then the comment text after it. -Eloquent JavaScript
 
@@ -407,19 +396,8 @@ Putting statements after one another gives you a program that is executed from t
 Variables can be used to file pieces of data under a name, and they are useful for tracking state in your program. The environment is the set of variables that are defined. JavaScript systems always put a number of useful standard variables into your environment.
 Functions are special values that encapsulate a piece of program. You can invoke them by writing functionName(argument1, argument2). Such a function call is an expression, and may produce a value. -Eloquent JavaScript
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Summary
+>You now know that a program is built out of statements, which themselves sometimes contain more statements. Statements tend to contain expressions, which themselves can be built out of smaller expressions.
+Putting statements after one another gives you a program that is executed from top to bottom. You can introduce disturbances in the flow of control by using conditional (if, else, and switch) and looping (while, do, and for) statements.
+Variables can be used to file pieces of data under a name, and they are useful for tracking state in your program. The environment is the set of variables that are defined. JavaScript systems always put a number of useful standard variables into your environment.
+Functions are special values that encapsulate a piece of program. You can invoke them by writing functionName(argument1, argument2). Such a function call is an expression, and may produce a value. -Eloquent JavaScript

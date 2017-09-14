@@ -49,7 +49,6 @@ JavaScript follows order of operations.
 ```
 
 ##Strings
-
 Strings represent text.  Strings must be enclosed with quotes.  Single or double.
 
 ```javascript
@@ -72,7 +71,6 @@ Note: Above the two backslashes before 'hello class!' represent the console's ou
 In JavaScript, double-slashes denote code comments.  Any code and/or text beyond the '//' will NOT be read by the JavaScript interpreter.
 
 ##Booleans
-
 The Boolean type has only two values --> true and false.  Observe this simple example.
 
 ```javascript
@@ -98,7 +96,6 @@ console.log(undefined)
 JavaScript operators are used to assign values, compare values, perform arithmetic operations, and more. -W3Schools
 
 ##Unary Operators
-
 A unary operator is an operation with only one operand.  A simple example is 'typeof'.
 
 >The typeof operator returns a string indicating the type of the unevaluated operand. - MDN
@@ -111,7 +108,6 @@ console.log(typeof 'x');
 ```
 
 ##Comparison
-
 Be careful with comparisons.  In JavaScript, strings can be compared like numbers.
 
 ```javascript
@@ -148,7 +144,6 @@ console.log(5!=5)
 ```
 
 ##Logical Operators
-
 JavaScript supports three logical operators.
 
 ###And
@@ -182,7 +177,6 @@ console.log(!false)
 ```
 
 ##Automatic Type Conversion
-
 JavaScript will go out of its way to evaluate a given expression.  This can result in odd behavior.
 
 ```javascript
@@ -218,7 +212,6 @@ console.log(3 === 3)
 ```
 
 #Summary
-
 >We looked at four types of JavaScript values in this chapter: numbers, strings, Booleans, and undefined values.
 <!-- Such values are created by typing in their name (true, null) or value (13, "abc"). You can combine and transform values with operators. We saw binary operators for arithmetic (+, -, *, /, and %), string concatenation (+), comparison (==, !=, ===, !==, <, >, <=, >=), and logic (&&, ||), as well as several unary operators (- to negate a number, ! to negate logically, and typeof to find a value’s type). -->
 This gives you enough information to use JavaScript as a pocket calculator, but not much more. The next chapter will start tying these expressions together into basic programs. -Eloquent JavaScript
