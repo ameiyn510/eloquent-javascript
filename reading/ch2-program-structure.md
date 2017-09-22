@@ -153,13 +153,12 @@ if (!isNaN(theNumber)) {
 
 Check For Understanding.  What happens if you enter "Dwayne The Rock Johnson"?
 
->The keyword if executes or skips a statement depending on the value of a Boolean expression. The deciding expression is written after the keyword, between parentheses, followed by the statement to execute.
->The isNaN function is a standard JavaScript function that returns true only if the argument it is given is NaN. The Number function happens to return NaN when you give it a string that doesn’t represent a valid number. Thus, the condition translates to “unless theNumber is not-a-number, do this”. -Eloquent JavaScript
+The value of the Boolean expression determines whether the keyword if executes or skips its code.  The deciding expression is written after keyword if, between parentheses.  Wrapped between following curly brackets is all code pending conditional execution.
 
-Check For Understanding.  What happened to the alert?
+Check For Understanding.  What happened to the alert?  What is the isNaN function?
 
 ##If-else
-Often, a programmer wants both (a) code that executes when a condition holds true AND (b) different code that executes when a condition holds false.  The else keyword can be used with if to create two separate, alternate execution paths.
+Often, a programmer wants both (a) code that executes when a condition holds true AND (b) different code to executes when a condition holds false.  The else keyword can be used with if to create two separate, alternate execution paths.
 
 ```javascript
 let theNumber = Number(prompt("Pick a number", ""));
@@ -224,11 +223,13 @@ while (number <= 10){
 // ... etcetera
 ```
 
->A statement starting with the keyword while creates a loop. The word while is followed by an expression in parentheses and then a statement, much like if. The loop executes that statement as long as the expression produces a value that is true when converted to Boolean type.
-In this loop, we want to both print the current number and add two to our variable. Whenever we need to execute multiple statements inside a loop, we wrap them in curly braces ({ and }). Braces do for statements what parentheses do for expressions: they group them together, making them count as a single statement. A sequence of statements wrapped in braces is called a block. -Eloquent JavaScript
+Beginning a statement with the keyword while creates a loop.  Following while is an expression in parentheses then a statement wrapped in curly brackets.  Much like if.  So long as the parenthetical expression is true, the loop will repeatedly execute its statement.
 
->The variable number demonstrates the way a variable can track the progress of a program. Every time the loop repeats, number is incremented by 2. Then, at the beginning of every repetition, it is compared with the number 12 to decide whether the program has done all the work it intended to do.
-As an example that actually does something useful, we can now write a program that calculates and shows the value of 210 (2 to the 10th power). We use two variables: one to keep track of our result and one to count how often we have multiplied this result by 2. The loop tests whether the second variable has reached 10 yet and then updates both variables. -Eloquent JavaScript
+Check For Understanding.  Why did the above while loop stop?
+
+Notice number tracks the program's progress.  Every time the loop repeats, number is incremented by 2.
+
+For the first time, let's examine useful code.  Below is code to calculate 2 to the 10th power.
 
 ```javascript
 var result = 1;
@@ -241,6 +242,8 @@ console.log(result);
 // → 1024
 ```
 
+Check For Understanding.  What happens if I change the while loop's expression to read "counter<11"?
+
 A control structure similar to a while loop is the do loop.  Main difference is a do loop always executes its body at least once.  Then starts testing whether to stop only after the first execution.
 
 ```javascript
@@ -250,7 +253,9 @@ do {
 console.log(yourName);
 ```
 
->This program will force you to enter a name. It will ask again and again until it gets something that is not an empty string. Applying the ! operator will convert a value to Boolean type before negating it, and all strings except "" convert to true. This means the loop continues going round until you provide a name that is not the empty string. -Eloquent JavaScript
+This program forces users to enter a name.  It will repeatedly ask until given a non-empty string value.
+
+Check For Understanding.  What happens if I enter the ! operator?
 
 ##Indenting Code
 To maximize your code's readability, indent your code.  Use spaces or tabs to illustrate your code's internal structure.
@@ -259,9 +264,7 @@ Below are two examples:
 
 ```javascript
 let stop=11
-for (let i=1;i<stop;i++){
-if(i%2===0){console.log("i is even!",i)}
-}
+for (let i=1;i<stop;i++){if(i%2===0){console.log("i is even!",i)}}
 ```
 
 In human language, what is the above code doing??  How long did it take to understand?
@@ -281,8 +284,7 @@ for ( let i = 1; i < stop; i++ ){
 The above example is indented well.  Without effort, we see a conditional nested in a for-loop.  Spaces help readability too.
 
 ##For Loops
->Many loops follow the pattern seen in the previous while examples. First, a “counter” variable is created to track the progress of the loop. Then comes a while loop, whose test expression usually checks whether the counter has reached some boundary yet. At the end of the loop body, the counter is updated to track progress.
-Because this pattern is so common, JavaScript and similar languages provide a slightly shorter and more comprehensive form, the for loop. -Eloquent JavaScript
+Writing loops follow a similar pattern.  In plain language, first we use the 'for' keyword.  Then we instantiate a variable representing out loop's starting point.  Next comes our ending point.  Finally, our increment.
 
 ```javascript
 for ( let number = 0; number <= 10; number=number+2 ) {
@@ -296,9 +298,22 @@ for ( let number = 0; number <= 10; number=number+2 ) {
 >This program is exactly equivalent to the earlier even-number-printing example. The only change is that all the statements that are related to the “state” of the loop are now grouped together.
 The parentheses after a for keyword must contain two semicolons. The part before the first semicolon initializes the loop, usually by defining a variable. The second part is the expression that checks whether the loop must continue. The final part updates the state of the loop after every iteration. In most cases, this is shorter and clearer than a while construct. -Eloquent JavaScript
 
+Remember the while loop above which calculates 2 to the 10th power??
+
+```javascript
+let result = 1;
+for (let counter = 0; counter < 10; counter = counter + 1) {
+  result = result * 2;
+}
+console.log(result);
+// → 1024
+```
+
+Check For Understanding.  What does the code above do?
+For the above code to print the 12th power of 2, what to change??
+
 ##Breaking Out A Loop
->Having the loop’s condition produce false is not the only way a loop can finish. There is a special statement called break that has the effect of immediately jumping out of the enclosing loop.
-This program illustrates the break statement. It finds the first number that is both greater than or equal to 20 and divisible by 7. -Eloquent JavaScript
+Another way to finish a loop is the break statement.  A break will immediately jump you out the loop.
 
 ```javascript
 for (var current = 20; ; current++) {
@@ -310,15 +325,48 @@ console.log(current)
 // → 21
 ```
 
->Using the remainder (%) operator is an easy way to test whether a number is divisible by another number. If it is, the remainder of their division is zero.
-The for construct in the example does not have a part that checks for the end of the loop. This means that the loop will never stop unless the break statement inside is executed.
-If you were to leave out that break statement or accidentally write a condition that always produces true, your program would get stuck in an infinite loop. A program stuck in an infinite loop will never finish running, which is usually a bad thing.
-If you create an infinite loop in one of the examples on these pages, you’ll usually be asked whether you want to stop the script after a few seconds. If that fails, you will have to close the tab that you’re working in, or on some browsers close your whole browser, in order to recover. -Eloquent JavaScript
+The remainder (%) operator can test whether a number is divisible by another.  Remember: clean divisions result in a remainder of zero.
+
+The example for-loop above does not have an ending point.  In other words: the loop will never stop unless the break statement inside is executed.  An infinite loop.
+
+A program stuck in an infinite loop will never finish running.  This is almost always bad.
+
+Intentionally or not, you will eventually write your own infinite loop.  After a few seconds of infinite loop, you're usually asked whether to terminate the script.  If that fails, try closing the tab.  If that fails too, try restarting your browser.
 
 ##Updating Variables Succinctly
->Especially when looping, a program often needs to “update” a variable to hold a value based on that variable’s previous value. -Eloquent JavaScript
+Programs often need to update a variable's value.  
+
+```javascript
+let counter = 5;
+counter= counter+1
+console.log(counter)
+// → 6
+```
+
+Look at this more succinct syntax.
+
+```javascript
+let counter = 5;
+counter+=1
+console.log(counter)
+// → 6
+```
+
+Explore these different syntaxes.
+```javascript
+let counter = 5;
+console.log(counter*=2)
+console.log(counter-=3)
+console.log(counter++)
+console.log(counter--)
+```
+
+Check For Understanding.  What should log to the console?
+
 
 ##Dispatching On A Value With Switch
+Common is the style of code below.
+
 ```javascript
 if (variable == "value1"){
   action1();
@@ -331,7 +379,7 @@ if (variable == "value1"){
 }
 ```
 
->There is a construct called switch that is intended to solve such a “dispatch” in a more direct way. Unfortunately, the syntax JavaScript uses for this (which it inherited from the C/Java line of programming languages) is somewhat awkward—a chain of if statements often looks better. Here is an example: -Eloquent JavaScript
+A switch statement helps solve "dispatch" directly.  But the syntax is a little awkward.
 
 ```javascript
 switch (prompt("What is the weather like?")) {
@@ -349,10 +397,12 @@ switch (prompt("What is the weather like?")) {
 }
 ```
 
->You may put any number of case labels inside the block opened by switch. The program will jump to the label that corresponds to the value that switch was given or to default if no matching value is found. It starts executing statements there, even if they’re under another label, until it reaches a break statement. In some cases, such as the "sunny" case in the example, this can be used to share some code between cases (it recommends going outside for both sunny and cloudy weather). But beware: it is easy to forget such a break, which will cause the program to execute code you do not want executed. -Eloquent JavaScript
+Inside the switch's code block can go any number of case labels.  The program will automatically jump to the label's code if the switch finds a matching value.  No match will invoke the default.
+
+Check For Understand.  Run the code above.  What happens when you enter "sunny"?
 
 ##Capitalization
->Variable names may not contain spaces, yet it is often helpful to use multiple words to clearly describe what the variable represents. These are pretty much your choices for writing a variable name with several words in it:
+Variable names may not contains paces.  Using multiple words for a variable name is often helpful.  Observe these examples
 
 ```javascript
 namingconventionsvary
@@ -361,11 +411,16 @@ NamingConventionsVary
 namingConventionsVary
 ```
 
->The first style can be hard to read. Personally, I like the look of the underscores, though that style is a little painful to type. The standard JavaScript functions, and most JavaScript programmers, follow the bottom style—they capitalize every word except the first. It is not hard to get used to little things like that, and code with mixed naming styles can be jarring to read, so we will just follow this convention. -Eloquent JavaScript
+The standard JavaScript naming convention is camelCase.  The last example has each word capitalized except the first.
 
 ##Comments
+
 >Often, raw code does not convey all the information you want a program to convey to human readers, or it conveys it in such a cryptic way that people might not understand it. At other times, you might just feel poetic or want to include some thoughts as part of your program. This is what comments are for.
 A comment is a piece of text that is part of a program but is completely ignored by the computer. JavaScript has two ways of writing comments. To write a single-line comment, you can use two slash characters (//) and then the comment text after it. -Eloquent JavaScript
+
+=============EDITING LINE=============
+=============EDITING LINE=============
+=============EDITING LINE=============  
 
 ```javascript
 var accountBalance = calculateBalance(account);
